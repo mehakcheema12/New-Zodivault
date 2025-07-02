@@ -439,95 +439,6 @@
             animation: fadeIn 0.5s ease-out;
         }
 
-        /* Time Machine Section */
-        .time-machine {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem auto;
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .time-machine h2 {
-            margin-bottom: 1.5rem;
-        }
-
-        .time-machine-controls {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .time-machine-controls button {
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            border: none;
-            background: var(--pastel-green);
-            color: #333;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .time-machine-controls button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        #timeMachineResult {
-            margin-top: 1.5rem;
-            animation: fadeIn 0.5s ease-out;
-        }
-
-        /* Tarot of the Day */
-        .tarot-daily {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem auto;
-            max-width: 600px;
-            text-align: center;
-        }
-
-        .tarot-daily h2 {
-            margin-bottom: 1.5rem;
-        }
-
-        #dailyTarotCard {
-            width: 150px;
-            height: 250px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, rgba(47, 47, 86, 0.9), rgba(29, 29, 63, 0.9));
-            border: 1px solid var(--glass-border);
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #dailyTarotCard:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        #dailyTarotResult {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: rgba(0,0,0,0.2);
-            border-radius: 12px;
-        }
-
         /* Credits Section */
         .credits {
             text-align: center;
@@ -1028,34 +939,11 @@
             </div>
         </section>
         
-        <!-- Tarot of the Day -->
-        <section id="tarot-daily">
-            <h2 class="section-title">Tarot Card of the Day</h2>
-            <div class="tarot-daily">
-                <p>Discover what the cards reveal about your day</p>
-                <div id="dailyTarotCard"></div>
-                <div id="dailyTarotResult"></div>
-            </div>
-        </section>
-        
-        <!-- Time Machine -->
-        <section id="time-machine">
-            <h2 class="section-title">Zodiac Time Machine</h2>
-            <div class="time-machine">
-                <p>Explore how zodiac signs were interpreted in different historical periods</p>
-                <div class="time-machine-controls">
-                    <button id="ancientEgypt">Ancient Egypt</button>
-                    <button id="medievalEurope">Medieval Europe</button>
-                    <button id="renaissance">Renaissance</button>
-                    <button id="modernEra">Modern Era</button>
-                </div>
-                <div id="timeMachineResult"></div>
-            </div>
-        </section>
-        
         <!-- Zodiac Signs Grid -->
         <section id="zodiac-signs">
             <h2 class="section-title">Explore the Zodiac</h2>
+            
+         
             
             <!-- Element Filters -->
             <div class="element-filters">
@@ -1160,6 +1048,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            
             // Zodiac data with expanded mythology
             const zodiacData = [
                 {
@@ -1182,12 +1071,6 @@
                         title: "The Golden Ram",
                         story: "In Greek mythology, Aries represents the golden ram that rescued Phrixus and Helle. The ram's fleece became the famous Golden Fleece sought by Jason and the Argonauts. The constellation commemorates this heroic creature that was eventually sacrificed to the gods.",
                         animation: "ram"
-                    },
-                    historicalViews: {
-                        ancientEgypt: "In ancient Egypt, Aries was associated with the god Amun, often depicted with ram's horns. The constellation marked the spring equinox and was seen as a symbol of renewal.",
-                        medievalEurope: "Medieval astrologers saw Aries as a sign of leadership and initiative, but also associated it with impulsiveness and quick temper.",
-                        renaissance: "Renaissance scholars connected Aries with the element of fire and saw it as representing the spark of creation and new beginnings.",
-                        modernEra: "Modern astrology views Aries as the pioneer of the zodiac, representing courage, enthusiasm, and a competitive spirit."
                     }
                 },
                 {
@@ -1210,12 +1093,6 @@
                         title: "The Cretan Bull",
                         story: "Taurus represents the white bull that carried Europa across the sea to Crete. In another myth, it's the Cretan Bull that Hercules captured as one of his labors. The bull symbolizes both gentle strength and untamed power in various ancient myths.",
                         animation: "bull"
-                    },
-                    historicalViews: {
-                        ancientEgypt: "In ancient Egypt, Taurus was linked to the Apis bull, a sacred animal representing strength and fertility. The constellation was associated with the goddess Hathor.",
-                        medievalEurope: "Medieval astrologers viewed Taurus as representing material wealth and earthly pleasures, but also warned of the dangers of stubbornness.",
-                        renaissance: "Renaissance thinkers saw Taurus as embodying the virtues of patience and persistence, with a strong connection to nature and agriculture.",
-                        modernEra: "Contemporary astrology emphasizes Taurus's connection to sensuality, stability, and appreciation for life's pleasures."
                     }
                 },
                 {
@@ -1238,12 +1115,6 @@
                         title: "The Twin Brothers",
                         story: "Gemini represents the twins Castor and Pollux from Greek mythology. Though Castor was mortal and Pollux immortal, their bond was so strong that when Castor died, Pollux shared his immortality with him, resulting in them alternating between Olympus and the underworld.",
                         animation: "twins"
-                    },
-                    historicalViews: {
-                        ancientEgypt: "In Egyptian astronomy, Gemini was associated with the twin gods Horus the Elder and Horus the Younger, representing duality and balance.",
-                        medievalEurope: "Medieval scholars saw Gemini as representing the dual nature of humanity - both spiritual and physical, with a tendency toward restlessness.",
-                        renaissance: "Renaissance astrologers emphasized Gemini's intellectual nature and connection to communication, seeing it as a sign of curiosity and learning.",
-                        modernEra: "Modern astrology views Gemini as the communicator of the zodiac, representing adaptability, wit, and a love of variety."
                     }
                 },
                 {
@@ -1266,12 +1137,6 @@
                         title: "The Crab of Hercules",
                         story: "Cancer represents the giant crab that attacked Hercules during his battle with the Hydra. Though the crab was crushed under Hercules' foot, the goddess Hera placed it in the stars for its bravery. In another version, it's the crab that carried Dionysus across a river.",
                         animation: "crab"
-                    },
-                    historicalViews: {
-                        ancientEgypt: "In ancient Egypt, Cancer was associated with the sacred scarab beetle, a symbol of transformation and protection, as well as with the moon god Khonsu.",
-                        medievalEurope: "Medieval astrology viewed Cancer as the most domestic and nurturing sign, with strong ties to family and home life.",
-                        renaissance: "Renaissance scholars saw Cancer as representing intuition and emotional depth, with a strong connection to the unconscious mind.",
-                        modernEra: "Contemporary astrology emphasizes Cancer's emotional intelligence, protective nature, and strong connection to family and tradition."
                     }
                 },
                 {
@@ -1294,12 +1159,6 @@
                         title: "The Nemean Lion",
                         story: "Leo represents the Nemean Lion, a monstrous beast with impenetrable hide that Hercules killed as his first labor. The lion was so fearsome that after its death, Zeus placed it in the stars. Some myths associate it with the lion that terrorized the hills of Nemea.",
                         animation: "lion"
-                    },
-                    historicalViews: {
-                        ancientEgypt: "In ancient Egypt, Leo was associated with the lioness goddess Sekhmet, representing both destructive power and protective energy. The constellation was also linked to the annual flooding of the Nile.",
-                        medievalEurope: "Medieval astrologers saw Leo as representing royalty, nobility, and the divine right of kings, with associations to leadership and authority.",
-                        renaissance: "Renaissance thinkers emphasized Leo's creative energy and connection to the arts, seeing it as a sign of self-expression and vitality.",
-                        modernEra: "Modern astrology views Leo as the performer of the zodiac, representing confidence, generosity, and a strong need for recognition."
                     }
                 },
                 {
@@ -1322,12 +1181,6 @@
                         title: "The Maiden Goddess",
                         story: "Virgo is associated with several maiden goddesses including Astraea (the star maiden), Demeter (goddess of harvest), and Persephone. Most commonly it represents Astraea, the last immortal to leave Earth at the end of the Silver Age, holding the scales of justice.",
                         animation: "maiden"
-                    },
-                    historicalViews: {
-                        ancientEgypt: "In ancient Egypt, Virgo was associated with the goddess Isis, representing fertility, magic, and wisdom. The constellation was linked to the annual harvest.",
-                        medievalEurope: "Medieval scholars viewed Virgo as representing purity and perfection, often associating it with the Virgin Mary in Christian symbolism.",
-                        renaissance: "Renaissance astrologers saw Virgo as embodying the ideals of service and practical wisdom, with a strong connection to health and healing.",
-                        modernEra: "Contemporary astrology emphasizes Virgo's analytical nature, attention to detail, and desire to be of service to others."
                     }
                 },
                 {
@@ -1350,12 +1203,6 @@
                         title: "The Scales of Justice",
                         story: "Libra represents the scales held by Astraea (Virgo), symbolizing justice and balance. In ancient times it was considered the claws of Scorpio before being recognized as its own constellation. The scales are associated with Themis, the Greek goddess of divine law and order.",
                         animation: "scales"
-                    },
-                    historicalViews: {
-                        ancientEgypt: "In ancient Egypt, Libra was associated with Ma'at, the goddess of truth, justice, and cosmic order. The scales were used to weigh hearts against the feather of truth in the afterlife.",
-                        medievalEurope: "Medieval astrologers viewed Libra as representing fairness and partnership, with strong connections to legal matters and marriage.",
-                        renaissance: "Renaissance thinkers saw Libra as embodying the ideals of beauty, harmony, and artistic expression, with a strong Venusian influence.",
-                        modernEra: "Modern astrology emphasizes Libra's diplomatic nature, love of beauty, and constant search for balance and harmony in relationships."
                     }
                 },
                 {
@@ -1378,12 +1225,6 @@
                         title: "The Scorpion's Sting",
                         story: "Scorpio represents the scorpion that killed Orion the hunter. In one version, Gaia sent the scorpion to kill Orion after he boasted he would hunt all animals. In another, Artemis sent it as punishment for Orion's attempted assault. Both were placed in the sky as constellations.",
                         animation: "scorpion"
-                    },
-                    historicalViews: {
-                        ancientEgypt: "In ancient Egypt, Scorpio was associated with the goddess Serket, protector against venomous creatures. The constellation was also linked to the journey of the sun through the underworld.",
-                        medievalEurope: "Medieval scholars viewed Scorpio with suspicion, associating it with dark magic, sexuality, and transformation. It was often seen as the most mysterious sign.",
-                        renaissance: "Renaissance astrologers saw Scorpio as representing deep psychological insight and the power of regeneration after destruction.",
-                        modernEra: "Contemporary astrology emphasizes Scorpio's intensity, emotional depth, and transformative power, seeing it as a sign of rebirth and regeneration."
                     }
                 },
                 {
@@ -1406,12 +1247,6 @@
                         title: "The Centaur Archer",
                         story: "Sagittarius represents Chiron, the wise centaur who mentored many Greek heroes including Hercules and Achilles. Unlike other centaurs, Chiron was immortal, civilized, and skilled in medicine. When accidentally wounded by Hercules, he gave up his immortality to free Prometheus.",
                         animation: "centaur"
-                    },
-                    historicalViews: {
-                        ancientEgypt: "In ancient Egypt, Sagittarius was associated with the god Horus as a falcon-headed archer, representing vision and higher purpose. The constellation marked the winter solstice.",
-                        medievalEurope: "Medieval astrologers saw Sagittarius as representing the quest for knowledge and spiritual truth, with associations to philosophy and religion.",
-                        renaissance: "Renaissance thinkers viewed Sagittarius as embodying the spirit of exploration and discovery, both physically and intellectually.",
-                        modernEra: "Modern astrology emphasizes Sagittarius's love of freedom, optimism, and philosophical nature, seeing it as the adventurer of the zodiac."
                     }
                 },
                 {
@@ -1434,12 +1269,6 @@
                         title: "The Sea-Goat",
                         story: "Capricorn represents Amalthea, the goat who nursed the infant Zeus. In gratitude, Zeus placed her among the stars. Another myth tells of Pan who transformed into a goat-fish to escape the monster Typhon, creating the sea-goat hybrid that became this constellation.",
                         animation: "goat"
-                    },
-                    historicalViews: {
-                        ancientEgypt: "In ancient Egypt, Capricorn was associated with the god Banebdjedet, depicted as a ram-headed deity representing stability and endurance. The constellation was linked to the Nile's life-giving waters.",
-                        medievalEurope: "Medieval scholars viewed Capricorn as representing ambition and worldly success, with strong associations to business and government.",
-                        renaissance: "Renaissance astrologers saw Capricorn as embodying the virtues of patience and perseverance, with a strong connection to tradition and structure.",
-                        modernEra: "Contemporary astrology emphasizes Capricorn's practical nature, strong work ethic, and ability to achieve long-term goals through discipline."
                     }
                 },
                 {
@@ -1462,12 +1291,6 @@
                         title: "The Water Bearer",
                         story: "Aquarius represents Ganymede, the beautiful Trojan prince abducted by Zeus to serve as cup-bearer to the gods. In another version, it's Deucalion who survived the great flood by building an ark. The water he pours symbolizes both the flood and the nectar of the gods.",
                         animation: "water"
-                    },
-                    historicalViews: {
-                        ancientEgypt: "In ancient Egypt, Aquarius was associated with Hapi, the god of the Nile flood, representing fertility and abundance. The water bearer symbolized the life-giving waters of the Nile.",
-                        medievalEurope: "Medieval astrologers viewed Aquarius as representing innovation and unconventional thinking, though sometimes with suspicion as it challenged tradition.",
-                        renaissance: "Renaissance thinkers saw Aquarius as embodying the ideals of progress and scientific discovery, with a strong connection to new technologies.",
-                        modernEra: "Modern astrology emphasizes Aquarius's visionary nature, humanitarian ideals, and desire to create a better future for humanity."
                     }
                 },
                 {
@@ -1490,12 +1313,6 @@
                         title: "The Fish of Aphrodite",
                         story: "Pisces represents the two fish that carried Aphrodite and Eros to safety when they fled the monster Typhon. The fish were tied together with a cord to avoid separation. In another version, the fish represent the divine forms taken by Isis and Osiris to escape Set.",
                         animation: "fish"
-                    },
-                    historicalViews: {
-                        ancientEgypt: "In ancient Egypt, Pisces was associated with the goddess Hathor in her fish form, representing fertility and abundance. The constellation was linked to the end of the agricultural cycle.",
-                        medievalEurope: "Medieval scholars viewed Pisces as representing spirituality and self-sacrifice, with strong Christian associations to Jesus and the apostles as 'fishers of men'.",
-                        renaissance: "Renaissance astrologers saw Pisces as embodying the ideals of compassion and artistic inspiration, with a strong connection to dreams and the unconscious.",
-                        modernEra: "Contemporary astrology emphasizes Pisces's psychic sensitivity, creative imagination, and deep connection to the spiritual realm."
                     }
                 }
             ];
@@ -1575,13 +1392,6 @@
             const elementButtons = document.querySelectorAll('.element-filters button');
             const navLinks = document.querySelectorAll('.nav-links a');
             const currentYear = document.getElementById('currentYear');
-            const ancientEgyptBtn = document.getElementById('ancientEgypt');
-            const medievalEuropeBtn = document.getElementById('medievalEurope');
-            const renaissanceBtn = document.getElementById('renaissance');
-            const modernEraBtn = document.getElementById('modernEra');
-            const timeMachineResult = document.getElementById('timeMachineResult');
-            const dailyTarotCard = document.getElementById('dailyTarotCard');
-            const dailyTarotResult = document.getElementById('dailyTarotResult');
 
             // Set current year in footer
             currentYear.textContent = new Date().getFullYear();
@@ -1719,54 +1529,53 @@
             // Get mythology animation HTML
             function getMythologyAnimation(signName) {
                 const sign = signName.toLowerCase();
-                if (sign.includes('aries')) return '🐏';
-                if (sign.includes('taurus')) return '🐂';
-                if (sign.includes('gemini')) return '👬';
-                if (sign.includes('cancer')) return '🦀';
-                if (sign.includes('leo')) return '🦁';
-                if (sign.includes('virgo')) return '👩';
-                if (sign.includes('libra')) return '⚖️';
-                if (sign.includes('scorpio')) return '🦂';
-                if (sign.includes('sagittarius')) return '🏹';
-                if (sign.includes('capricorn')) return '🐐';
-                if (sign.includes('aquarius')) return '🚰';
-                if (sign.includes('pisces')) return '🐟';
+                if (sign.includes('aries')) return '♈︎';
+                if (sign.includes('taurus')) return '♉︎';
+                if (sign.includes('gemini')) return '♊︎';
+                if (sign.includes('cancer')) return '♋︎';
+                if (sign.includes('leo')) return '♌︎';
+                if (sign.includes('virgo')) return '♍︎';
+                if (sign.includes('libra')) return '♎︎';
+                if (sign.includes('scorpio')) return '♏︎';
+                if (sign.includes('sagittarius')) return '♐︎';
+                if (sign.includes('capricorn')) return '♑︎';
+                if (sign.includes('aquarius')) return '♒︎';
+                if (sign.includes('pisces')) return '♓︎';
                 return '✨';
             }
 
             // Close modals
-            function closeModalHandler() {
-                zodiacModal.classList.remove('active');
-            }
+function closeModalHandler() {
+    zodiacModal.classList.remove('active');
+}
 
-            function closeMythologyHandler() {
-                mythologyModal.classList.remove('active');
-            }
+function closeMythologyHandler() {
+    mythologyModal.classList.remove('active');
+}
 
-            // Event listeners for close buttons
-            closeModal.addEventListener('click', closeModalHandler);
-            closeMythModal.addEventListener('click', closeMythologyHandler);
+// Event listeners for close buttons
+closeModal.addEventListener('click', closeModalHandler);
+closeMythModal.addEventListener('click', closeMythologyHandler);
 
-            // Close when clicking outside modal content
-            zodiacModal.addEventListener('click', (e) => {
-                if (e.target === zodiacModal) closeModalHandler();
-            });
+// Close when clicking outside modal content
+zodiacModal.addEventListener('click', (e) => {
+    if (e.target === zodiacModal) closeModalHandler();
+});
 
-            mythologyModal.addEventListener('click', (e) => {
-                if (e.target === mythologyModal) closeMythologyHandler();
-            });
+mythologyModal.addEventListener('click', (e) => {
+    if (e.target === mythologyModal) closeMythologyHandler();
+});
 
-            // Keyboard escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    if (mythologyModal.classList.contains('active')) {
-                        closeMythologyHandler();
-                    } else if (zodiacModal.classList.contains('active')) {
-                        closeModalHandler();
-                    }
-                }
-            });
-
+// Keyboard escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        if (mythologyModal.classList.contains('active')) {
+            closeMythologyHandler();
+        } else if (zodiacModal.classList.contains('active')) {
+            closeModalHandler();
+        }
+    }
+});
             // Create cosmic background
             function createCosmicBackground() {
                 // Create 60 particles
@@ -1962,67 +1771,6 @@
                 });
             }
 
-            // Set up Time Machine
-            function setupTimeMachine() {
-                const currentSign = getCurrentZodiac().current;
-                const currentZodiac = zodiacData.find(z => z.name === currentSign);
-                
-                ancientEgyptBtn.addEventListener('click', () => {
-                    showHistoricalView(currentZodiac, 'ancientEgypt');
-                });
-                
-                medievalEuropeBtn.addEventListener('click', () => {
-                    showHistoricalView(currentZodiac, 'medievalEurope');
-                });
-                
-                renaissanceBtn.addEventListener('click', () => {
-                    showHistoricalView(currentZodiac, 'renaissance');
-                });
-                
-                modernEraBtn.addEventListener('click', () => {
-                    showHistoricalView(currentZodiac, 'modernEra');
-                });
-            }
-
-            function showHistoricalView(zodiac, era) {
-                const eraName = era.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
-                const view = zodiac.historicalViews[era];
-                
-                timeMachineResult.innerHTML = `
-                    <div class="result-card" style="--sign-color: ${zodiac.color}">
-                        <h3>${zodiac.name} in ${eraName}</h3>
-                        <div class="result-icon">${zodiac.icon}</div>
-                        <p>${view}</p>
-                    </div>
-                `;
-            }
-
-            // Set up Tarot of the Day
-            function setupDailyTarot() {
-                // Get a consistent random card based on the day
-                const today = new Date();
-                const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
-                const cardIndex = dayOfYear % tarotCards.length;
-                const dailyCard = tarotCards[cardIndex];
-                const zodiac = zodiacData.find(z => z.name === dailyCard.zodiac);
-                
-                dailyTarotCard.innerHTML = `
-                    <div class="card-name">${dailyCard.name}</div>
-                `;
-                
-                dailyTarotResult.innerHTML = `
-                    <h3>Today's Card: ${dailyCard.name}</h3>
-                    <p><strong>Meaning:</strong> ${dailyCard.meaning}</p>
-                    <p><strong>Associated Zodiac:</strong> ${zodiac.name} ${zodiac.icon}</p>
-                    <p>${zodiac.mythology.story.split('.')[0]}.</p>
-                    <button id="viewDailyZodiac" style="background: ${zodiac.color}">Learn About ${zodiac.name}</button>
-                `;
-                
-                document.getElementById('viewDailyZodiac').addEventListener('click', () => {
-                    openZodiacModal(zodiac);
-                });
-            }
-
             // Set up theme selector
             function setupThemeSelector() {
                 themeButtons.forEach(button => {
@@ -2092,8 +1840,6 @@
                 createCosmicBackground();
                 setupTarotQuiz();
                 setupBirthdayFinder();
-                setupTimeMachine();
-                setupDailyTarot();
                 setupThemeSelector();
                 setupElementFilters();
                 setupSmoothScrolling();
